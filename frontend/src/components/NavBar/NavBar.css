@@ -1,0 +1,30 @@
+root {
+  --white:#FAFAFF;
+  --grey:#E9ECEF;
+  --dark:#1D3557;
+  --red:#E63946;
+  --primary-color:#003049;
+  --secondary-color:#669BBC;
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #003049;
+  width:100%;
+  padding-bottom:5%;
+  padding-top:5%;
+}
+
+/* Icon {
+  color:#E9ECEF;
+} */
+
+body{
+  background-color: #E9ECEF;
+}
