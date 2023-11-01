@@ -1,4 +1,4 @@
-root {
+:root {
   --white:#FAFAFF;
   --grey:#E9ECEF;
   --dark:#1D3557;
@@ -15,7 +15,7 @@ nav {
   bottom: 0;
   display: flex;
   justify-content: space-around;
-  background-color: #003049;
+  background-color: var(--primary-color);
   width:100%;
   padding-bottom:5%;
   padding-top:5%;
@@ -26,5 +26,5 @@ nav {
 } */
 
 body{
-  background-color: #E9ECEF;
+  background-color: var(--grey);
 }
