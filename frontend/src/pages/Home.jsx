@@ -1,12 +1,15 @@
-import NavBar from "./components/NavBar/NavBar";
+import NavBar from "../components/NavBar/NavBar";
 import "./Home.css";
 
-export default function Home(){
-  
-  
-  return(
+export default function Home() {
+  return (
     <>
-      <NavBar/>
+      <header>
+        <div className="header-name-container">
+          <h1>Discover Events Near You</h1>
+        </div>
+      </header>
+      <NavBar />
     </>
-  )
+  );
 }

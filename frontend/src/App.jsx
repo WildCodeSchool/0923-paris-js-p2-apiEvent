@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Description from "./components/Description/Description";
+import Home from "./pages/Home";
 
 function App() {
   const [dataEvents, setDataEvents] = useState([]);
@@ -16,7 +17,8 @@ function App() {
 
   return (
     <>
-      <div className="App">
+      <Home />
+      <div>
         <NavBar />
       </div>
 
