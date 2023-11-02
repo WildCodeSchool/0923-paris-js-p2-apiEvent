@@ -15,7 +15,7 @@ function SearchBar(props) {
   }
 
   return (
-    <form>
+    <form className="searchBox">
       <input
         type="text"
         placeholder="Musée, théâtre"
