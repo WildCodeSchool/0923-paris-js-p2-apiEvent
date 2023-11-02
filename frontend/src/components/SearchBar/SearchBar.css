@@ -1,4 +1,53 @@
-.searchBox input {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Karla:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+  --white: #fafaff;
+  --grey: #e9ecef;
+  --dark: #1d3557;
+  --red: #e63946;
+  --primary-color: #003049;
+  --secondary-color: #669bbc;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+}
+
+.searchBar-container {
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color:rgba(102, 155, 188, 0.2);
   border-radius: 30px;
-  background-color: aqua;
+  backdrop-filter: blur(4px) saturate(180%);
+}
+.searchBar input {
+  flex: 1;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  padding: 24px;
+  font-size: 30px;
+}
+
+.searchBar input::placeholder {
+  color: var(--grey);
+  font-size: 30px;
+}
+
+.searchBar button {
+  padding:10px;
+  background-color: transparent;
+  border:none;
+  cursor:pointer;
 }
