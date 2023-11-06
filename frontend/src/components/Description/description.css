@@ -1,17 +1,21 @@
 @media (min-width: 425px) {
 
 .alldescription {
-    max-width: fit-content;
-    display: block;
-    
+    max-width: 100%; 
+    /* display: block; */
+    /* max-width: fit-content; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
     }
 .desccond {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display: flex;
+    /* display: flex; */
     justify-content: center; 
     align-items: center;
     margin-right: 0.5rem;
     margin-left: 1rem;
+    flex: 1;
 }
 .hrtop{
     margin-left: 3rem;
@@ -43,8 +47,14 @@
     width: 100%;
 }
 .pic{
-    max-width: 100%;
+    /* max-width: 100%; */
+    height: auto;
+    max-width: 425px; 
 }
+/* .pic>img {
+    max-width: 425px;
+} */
+
 .locations{
     display: flex;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

@@ -1,19 +1,13 @@
+import { useState } from "react";
 import "./SearchBar.css";
 import { Icon } from "@iconify/react";
 
-function SearchBar(props) {
-  const { searchInput, setSearchInput, setCardlist, cardlist } = props;
+function SearchBar({ onSearch }) {
+  const [searchInput, setSearchInput] = useState("");
 
-  function handleSearch(e) {
-    setSearchInput(e.target.value);
-    e.preventDefault();
-    if (searchInput !== "") {
-      const filteredList = cardlist.filter((card) =>
-        card.username.includes(searchInput)
-      );
-      setCardlist(filteredList);
-    }
-  }
+  const handleSearch = () => {
+    onSearch(searchInput);
+  };
 
   return (
     <div className="searchBar-container">
@@ -21,10 +15,10 @@ function SearchBar(props) {
         <input
           type="text"
           placeholder="Musée, théâtre..."
-          onChange={(event) => handleSearch(event)}
+          onChange={(e) => setSearchInput(e.target.value)}
           value={searchInput}
         />
-        <button type="submit">
+        <button type="button" onClick={handleSearch}>
           <Icon icon="charm:search" color="#fafaff" width="40" />
         </button>
       </form>

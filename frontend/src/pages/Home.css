@@ -23,6 +23,8 @@ header {
     url("https://images.unsplash.com/photo-1687360441027-27e70655b27e?auto=format&fit=crop&q=80&w=1883&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
   height: 26em;
+  display: flex;
+  flex-direction: column;
 }
 
 .header-name-container {
@@ -31,7 +33,41 @@ header {
 }
 
 header h1 {
-  color: var(--white);
-  font-size: 50px;
+    color: var(--white);
+  font-size: 40px;
   font-weight: 700;
+}
+header h2 {
+  color: var(--white);
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.searchBar-container {
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(102, 155, 188, 0.2);
+  border-radius: 30px;
+  backdrop-filter: blur(4px) saturate(180%);
+}
+
+.searchBar input {
+  flex: 1;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  padding: 24px;
+  font-size: 30px;
+  color: var(--grey);
 }

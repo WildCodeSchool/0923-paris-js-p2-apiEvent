@@ -13,9 +13,9 @@
   font-family: "Karla", sans-serif;
 }
 
-.searchBar-container {
+/* .searchBar-container {
   width: 100%;
-  padding: 5%;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,8 @@
   outline: none;
   padding: 24px;
   font-size: 30px;
-}
+  color: var(--grey);
+} */
 
 .searchBar input::placeholder {
   color: var(--grey);
