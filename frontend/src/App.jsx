@@ -27,13 +27,15 @@ function App() {
         ? data.title_fr.toLowerCase().includes(searchQuery.toLowerCase())
         : false;
 
-      // if (isPostalCode) {
-      //   const postalCodeMatch = data.location_postalcode
-      //     ? data.location_postalcode === searchQuery
-      //     : false;
+      const isPostalCode = /^\d{5}$/.test(searchQuery);
 
-      //   return postalCodeMatch;
-      // }
+      if (isPostalCode) {
+        const postalCodeMatch = data.location_postalcode
+          ? data.location_postalcode.includes(searchQuery)
+          : false;
+
+        return postalCodeMatch;
+      }
 
       if (typeof data.keywords_fr === "string") {
         const keywordsArray = data.keywords_fr.split(",");
