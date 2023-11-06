@@ -3,10 +3,10 @@ import "./SearchBar.css";
 import { Icon } from "@iconify/react";
 
 function SearchBar({ onSearch }) {
-  const [searchInput, setSearchInput] = useState("");
+  const [search, setSearch] = useState("");
 
   const handleSearch = () => {
-    onSearch(searchInput);
+    onSearch(search);
   };
 
   return (
@@ -15,8 +15,8 @@ function SearchBar({ onSearch }) {
         <input
           type="text"
           placeholder="Musée, théâtre..."
-          onChange={(e) => setSearchInput(e.target.value)}
-          value={searchInput}
+          onChange={(e) => setSearch(e.target.value)}
+          value={search}
         />
         <button type="button" onClick={handleSearch}>
           <Icon icon="charm:search" color="#fafaff" width="40" />

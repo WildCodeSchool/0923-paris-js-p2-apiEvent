@@ -20,19 +20,26 @@ function App() {
       });
   }, []);
 
-  const filterData = (searchInput) => {
-    setSearchInput(searchInput);
+  const filterData = (searchQuery) => {
+    setSearchInput(searchQuery);
     const filtered = dataEvents.filter((data) => {
       const titleMatch = data.title_fr
-        ? data.title_fr.toLowerCase().includes(searchInput.toLowerCase())
+        ? data.title_fr.toLowerCase().includes(searchQuery.toLowerCase())
         : false;
+
+      // if (isPostalCode) {
+      //   const postalCodeMatch = data.location_postalcode
+      //     ? data.location_postalcode === searchQuery
+      //     : false;
+
+      //   return postalCodeMatch;
+      // }
 
       if (typeof data.keywords_fr === "string") {
         const keywordsArray = data.keywords_fr.split(",");
         const keywordsMatch = keywordsArray.some((keyword) =>
-          keyword.trim().toLowerCase().includes(searchInput.toLowerCase())
+          keyword.trim().toLowerCase().includes(searchQuery.toLowerCase())
         );
-
         return titleMatch || keywordsMatch;
       }
 
@@ -40,7 +47,7 @@ function App() {
         const keywordsMatch = data.keywords_fr.some(
           (keyword) =>
             typeof keyword === "string" &&
-            keyword.trim().toLowerCase().includes(searchInput.toLowerCase())
+            keyword.trim().toLowerCase().includes(searchQuery.toLowerCase())
         );
 
         return titleMatch || keywordsMatch;
