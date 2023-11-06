@@ -6,7 +6,6 @@ import Home from "./pages/Home";
 
 function App() {
   const [dataEvents, setDataEvents] = useState([]);
-  const [searchInput, setSearchInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
@@ -21,7 +20,6 @@ function App() {
   }, []);
 
   const filterData = (searchQuery) => {
-    setSearchInput(searchQuery);
     const filtered = dataEvents.filter((data) => {
       const titleMatch = data.title_fr
         ? data.title_fr.toLowerCase().includes(searchQuery.toLowerCase())
@@ -30,8 +28,12 @@ function App() {
       const isPostalCode = /^\d{5}$/.test(searchQuery);
 
       if (isPostalCode) {
+        const userFirstPostalDigits = searchQuery.substring(0, 2);
+        const userLastPostalDigits = searchQuery.substring(3, 5);
+
         const postalCodeMatch = data.location_postalcode
-          ? data.location_postalcode.includes(searchQuery)
+          ? data.location_postalcode.startsWith(userFirstPostalDigits) &&
+            data.location_postalcode.endsWith(userLastPostalDigits)
           : false;
 
         return postalCodeMatch;
@@ -63,7 +65,7 @@ function App() {
 
   return (
     <>
-      <Home searchInput={searchInput} filterData={filterData} />
+      <Home filterData={filterData} />
       <NavBar />
       <div className="cards-display">
         {filteredData.map((data) => (
