@@ -1,5 +1,3 @@
-import "./description.css";
-
 function Description({ data }) {
   return (
     <div className="alldescritpion">
