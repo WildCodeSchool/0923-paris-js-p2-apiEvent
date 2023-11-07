@@ -18,7 +18,7 @@ function SearchBar({ onSearch }) {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
-        <button type="button" onClick={handleSearch}>
+        <button type="button" onClick={() => handleSearch()}>
           <Icon icon="charm:search" color="#fafaff" width="40" />
         </button>
       </form>
