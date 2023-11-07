@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./SearchBar.css";
+import { Icon } from "@iconify/react";
 
 function SearchBar({ onSearch }) {
   const [search, setSearch] = useState("");
@@ -17,9 +18,12 @@ function SearchBar({ onSearch }) {
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
-        <button type="button" onClick={handleSearch}>
-          button
-        </button>
+        <Icon
+          icon="charm:search"
+          color="#fafaff"
+          width="40"
+          onClick={handleSearch}
+        />
       </form>
     </div>
   );
