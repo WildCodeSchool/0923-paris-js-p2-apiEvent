@@ -1,19 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Karla:wght@200;300;400;500;600;700;800&display=swap");
+
 @media (min-width: 425px) {
   .alldescription {
-    max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    max-width: fit-content;
   }
   .desccond {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
-    display: flex;
+    font-family: "Karla", sans-serif;
     justify-content: center;
     align-items: center;
     margin-right: 0.5rem;
     margin-left: 1rem;
-    flex: 1;
   }
   .hrtop {
     margin-left: 3rem;
@@ -24,20 +20,29 @@
     margin-right: 3rem;
   }
   .adress {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
+    font-family: "Karla", sans-serif;
     display: flex;
     justify-content: left;
     margin-left: 3rem;
   }
+  .dateadress {
+    display: block;
+    align-items: left;
+  }
   .descirptiondatelist {
     display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    align-items: center;
+  }
+  .location {
+    display: flex;
+    justify-content: space-around;
   }
   .longdescr {
     margin-right: 2rem;
     margin-left: 2rem;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
+    font-family: "Karla", sans-serif;
   }
   .booking {
     color: white;
@@ -46,18 +51,13 @@
     width: 100%;
   }
   .pic {
-    /* max-width: 100%; */
-    height: auto;
-    max-width: 425px;
+    color: bisque;
+    width: fit-content;
   }
-  /* .pic>img {
-    max-width: 425px;
-} */
-
-  .locations {
+  .location {
     display: flex;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
+    font-family: "Karla", sans-serif;
     justify-content: center;
+    align-items: center;
   }
 }
