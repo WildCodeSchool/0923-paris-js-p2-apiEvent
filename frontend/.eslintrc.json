@@ -21,12 +21,6 @@
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     "react/prop-types": 0,
     "no-console": "off",
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
-    ],
     "no-restricted-syntax": [
       "error",
       {
