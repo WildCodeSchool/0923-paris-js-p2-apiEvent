@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./SearchBar.css";
-import { Icon } from "@iconify/react";
 
 function SearchBar({ onSearch }) {
   const [search, setSearch] = useState("");
