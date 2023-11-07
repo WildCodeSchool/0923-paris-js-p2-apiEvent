@@ -1,65 +1,65 @@
 @media (min-width: 425px) {
-
-.alldescription {
-    max-width: 100%; 
+  .alldescription {
+    max-width: 100%;
     /* display: block; */
     /* max-width: fit-content; */
     display: flex;
     flex-wrap: wrap;
-    align-items: center; 
-    }
-.desccond {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items: center;
+  }
+  .desccond {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
     /* display: flex; */
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     margin-right: 0.5rem;
     margin-left: 1rem;
     flex: 1;
-}
-.hrtop{
+  }
+  .hrtop {
     margin-left: 3rem;
     margin-right: 3rem;
-}
-.hrbot{
+  }
+  .hrbot {
     margin-left: 3rem;
     margin-right: 3rem;
-}
-.adress {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .adress {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
     display: flex;
     justify-content: left;
     margin-left: 3rem;
-}
-.descirptiondatelist{
+  }
+  .descirptiondatelist {
     display: flex;
-    
-}
-.longdescr{
+  }
+  .longdescr {
     margin-right: 2rem;
     margin-left: 2rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.booking {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+  }
+  .booking {
     color: white;
     background-color: red;
     height: 3rem;
     width: 100%;
-}
-.pic{
+  }
+  .pic {
     /* max-width: 100%; */
     height: auto;
-    max-width: 425px; 
-}
-/* .pic>img {
+    max-width: 425px;
+  }
+  /* .pic>img {
     max-width: 425px;
 } */
 
-.locations{
+  .locations {
     display: flex;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
     justify-content: center;
+  }
 }
-
-}
-    
