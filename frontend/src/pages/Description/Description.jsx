@@ -33,7 +33,7 @@ function Description({ data }) {
         </div>
       </div>
       <Map
-        latitude={data.location_coordinates.lat}
+        latitud={data.location_coordinates.lat}
         longitude={data.location_coordinates.lon}
       />
       <button
