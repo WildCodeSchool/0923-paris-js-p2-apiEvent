@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import Router from "./Router";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Description from "./components/Description/Description";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 
 function App() {
   const [dataEvents, setDataEvents] = useState([]);
@@ -65,8 +67,12 @@ function App() {
 
   return (
     <>
+      <BrowserRouter>
+        <Router />
+        <NavBar />
+      </BrowserRouter>
+
       <Home filterData={filterData} />
-      <NavBar />
       <div className="cards-display">
         {filteredData.map((data) => (
           <div key={data.uid}>
