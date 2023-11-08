@@ -5,13 +5,6 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Description from "./components/Description/Description";
 import Home from "./pages/Home/Home";
-import QRCodeEvent from "./pages/QRCodeEvent/QRCodeEvent";
-import Reservation from "./pages/Reservation/Reservation";
-import SearchInterface from "./pages/SearchInterface/SearchInterface";
-import UserDashboardMyEvents from "./pages/UserDashboardMyEvents/UserDashboardMyEvents";
-import UserDashboardMyFavorites from "./pages/UserDashboardMyFavorites/UserDashboardMyFavorites";
-import SearchBar from "./components/SearchBar/SearchBar";
-
 
 function App() {
   const [dataEvents, setDataEvents] = useState([]);
