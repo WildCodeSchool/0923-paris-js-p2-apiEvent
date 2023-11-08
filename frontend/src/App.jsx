@@ -5,6 +5,7 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Description from "./pages/Description/Description";
 import Home from "./pages/Home/Home";
+import { AllEventsProvider } from "./contexts/AllEvents";
 
 function App() {
   const [dataEvents, setDataEvents] = useState([]);
@@ -67,11 +68,12 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Router />
-        <NavBar />
-      </BrowserRouter>
-
+      <AllEventsProvider>
+        <BrowserRouter>
+          <Router />
+          <NavBar />
+        </BrowserRouter>
+      </AllEventsProvider>
       <Home filterData={filterData} />
       <div className="cards-display">
         {filteredData.map((data) => (
