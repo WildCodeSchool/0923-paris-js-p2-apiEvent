@@ -4,8 +4,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import useAllEventsContext from "../../contexts/AllEvents";
 
 function SearchInterface() {
-  const { dataEvents, setDataEvents, filteredData, setFilteredData } =
-    useAllEventsContext();
+  const { dataEvents, setFilteredData } = useAllEventsContext();
 
   console.info(dataEvents);
 
