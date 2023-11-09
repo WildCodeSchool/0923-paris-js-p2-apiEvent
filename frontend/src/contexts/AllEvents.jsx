@@ -17,7 +17,57 @@ export function AllEventsProvider({ children }) {
           setFilteredData(data.results);
         });
     }, []);
-    return { dataEvents, setDataEvents, filteredData, setFilteredData };
+
+    const filterData = (searchQuery) => {
+      const filtered = dataEvents.filter((data) => {
+        const titleMatch = data.title_fr
+          ? data.title_fr.toLowerCase().includes(searchQuery.toLowerCase())
+          : false;
+
+        const isPostalCode = /^\d{5}$/.test(searchQuery);
+
+        if (isPostalCode) {
+          const userFirstPostalDigits = searchQuery.substring(0, 2);
+          const userLastPostalDigits = searchQuery.substring(3, 5);
+
+          const postalCodeMatch = data.location_postalcode
+            ? data.location_postalcode.startsWith(userFirstPostalDigits) &&
+              data.location_postalcode.endsWith(userLastPostalDigits)
+            : false;
+
+          return postalCodeMatch;
+        }
+
+        if (typeof data.keywords_fr === "string") {
+          const keywordsArray = data.keywords_fr.split(",");
+          const keywordsMatch = keywordsArray.some((keyword) =>
+            keyword.trim().toLowerCase().includes(searchQuery.toLowerCase())
+          );
+          return titleMatch || keywordsMatch;
+        }
+
+        if (Array.isArray(data.keywords_fr)) {
+          const keywordsMatch = data.keywords_fr.some(
+            (keyword) =>
+              typeof keyword === "string" &&
+              keyword.trim().toLowerCase().includes(searchQuery.toLowerCase())
+          );
+
+          return titleMatch || keywordsMatch;
+        }
+
+        return titleMatch;
+      });
+
+      setFilteredData(filtered);
+    };
+    return {
+      dataEvents,
+      setDataEvents,
+      filteredData,
+      setFilteredData,
+      filterData,
+    };
   }, [dataEvents, filteredData]);
 
   return (

@@ -1,60 +1,13 @@
 import { Icon } from "@iconify/react";
-// import { useContext } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import useAllEventsContext from "../../contexts/AllEvents";
+import Description from "../../components/Description/Description";
 
 function SearchInterface() {
-  const { dataEvents, setFilteredData } = useAllEventsContext();
-
-  console.info(dataEvents);
-
-  const filterData = (searchQuery) => {
-    const filtered = dataEvents.filter((data) => {
-      const titleMatch = data.title_fr
-        ? data.title_fr.toLowerCase().includes(searchQuery.toLowerCase())
-        : false;
-
-      const isPostalCode = /^\d{5}$/.test(searchQuery);
-
-      if (isPostalCode) {
-        const userFirstPostalDigits = searchQuery.substring(0, 2);
-        const userLastPostalDigits = searchQuery.substring(3, 5);
-
-        const postalCodeMatch = data.location_postalcode
-          ? data.location_postalcode.startsWith(userFirstPostalDigits) &&
-            data.location_postalcode.endsWith(userLastPostalDigits)
-          : false;
-
-        return postalCodeMatch;
-      }
-
-      if (typeof data.keywords_fr === "string") {
-        const keywordsArray = data.keywords_fr.split(",");
-        const keywordsMatch = keywordsArray.some((keyword) =>
-          keyword.trim().toLowerCase().includes(searchQuery.toLowerCase())
-        );
-        return titleMatch || keywordsMatch;
-      }
-
-      if (Array.isArray(data.keywords_fr)) {
-        const keywordsMatch = data.keywords_fr.some(
-          (keyword) =>
-            typeof keyword === "string" &&
-            keyword.trim().toLowerCase().includes(searchQuery.toLowerCase())
-        );
-
-        return titleMatch || keywordsMatch;
-      }
-
-      return titleMatch;
-    });
-
-    setFilteredData(filtered);
-  };
-
+  const { dataEvents } = useAllEventsContext();
   return (
     <>
-      <SearchBar onSearch={filterData} />
+      <SearchBar />
       <div className="ZoneFilter">
         <h2>
           {" "}
@@ -66,6 +19,13 @@ function SearchInterface() {
           />{" "}
           Select Zone
         </h2>
+        <div className="zone-list">
+          {dataEvents.map((data) => (
+            <div key={data.uid}>
+              <Description data={data} />
+            </div>
+          ))}
+        </div>
       </div>
       <div className="DateFilter">
         <h2>
