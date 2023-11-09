@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./description.css";
 import { Icon } from "@iconify/react";
 import Reservation from "../Reservation/Reservation";
-import Map from "../../components/Map/Map";
+import BingMap from "../../components/bingMap/Bingmap";
 
 function Description({ data }) {
   const [bookingVisible, setBookingVisible] = useState(false);
@@ -32,10 +32,9 @@ function Description({ data }) {
           <p className="adress">{data.location_address}</p>
         </div>
       </div>
-      <Map
-        latitud={data.location_coordinates.lat}
-        longitude={data.location_coordinates.lon}
-      />
+      <div className="Map">
+        <BingMap data={data} />
+      </div>
       <button
         className="booking"
         type="button"

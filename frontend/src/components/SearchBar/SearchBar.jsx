@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "./SearchBar.css";
 import { Icon } from "@iconify/react";
+import useAllEventsContext from "../../contexts/AllEvents";
 
-function SearchBar({ onSearch }) {
+function SearchBar() {
+  const { filterData } = useAllEventsContext();
   const [search, setSearch] = useState("");
 
   const handleSearch = () => {
-    onSearch(search);
+    filterData(search);
   };
 
   return (
