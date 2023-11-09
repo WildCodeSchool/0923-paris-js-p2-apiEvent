@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import useAllEventsContext from "../../contexts/AllEvents";
-import Description from "../../components/Description/Description";
+import Card from "../../components/Card/Card";
 
 function SearchInterface() {
   const { dataEvents } = useAllEventsContext();
@@ -20,11 +20,9 @@ function SearchInterface() {
           Select Zone
         </h2>
         <div className="zone-list">
-          {dataEvents.map((data) => (
-            <div key={data.uid}>
-              <Description data={data} />
-            </div>
-          ))}
+          {dataEvents.map((obj) => {
+            return <Card dataEvents={obj} />;
+          })}
         </div>
       </div>
       <div className="DateFilter">

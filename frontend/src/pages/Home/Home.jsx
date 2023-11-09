@@ -1,7 +1,7 @@
 import SearchBar from "../../components/SearchBar/SearchBar";
-import Description from "../../components/Description/Description";
 import "./Home.css";
 import useAllEventsContext from "../../contexts/AllEvents";
+import Card from "../../components/Card/Card";
 
 export default function Home() {
   const { filterData, filteredData } = useAllEventsContext();
@@ -17,11 +17,9 @@ export default function Home() {
         </div>
       </header>
       <div className="cards-display">
-        {filteredData.map((data) => (
-          <div key={data.uid}>
-            <Description data={data} />
-          </div>
-        ))}
+        {filteredData.map((obj) => {
+          return <Card filteredData={obj} />;
+        })}
       </div>
     </>
   );
