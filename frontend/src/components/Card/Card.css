@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Karla:wght@200;300;400;500;600;700;800&display=swap");
+@media (min-width: 425px) {
+  .singleEvent {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 0.5rem;
+    border-radius: 1rem;
+    justify-content: space-around;
+  }
+  img.imageEvent {
+    display: inline-block;
+    border: 1rem;
+    border-radius: 5rem;
+    width: 100%;
+    height: 200px;
+    border-radius: 20% 10% / 0% 0%;
+  }
+  .container {
+    position: relative;
+  }
+  .container img {
+    display: block;
+  }
+  .container .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .eventdatelist {
+    list-style-type: none;
+  }
+
+  .eventdatelist li {
+    font-family: "Karla", sans-serif;
+    font-weight: bold;
+    color: #669bbc;
+    font-size: larger;
+  }
+}

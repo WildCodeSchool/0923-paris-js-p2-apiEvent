@@ -4,15 +4,16 @@ import { Icon } from "@iconify/react";
 
 function Card({ obj }) {
   //   const { filteredData } = useAllEventsContext();
-  console.info(obj);
   return (
     <div className="singleEvent">
-      <img src={obj.image} alt="img" />
+      <div className="container">
+        <img src={obj.image} alt="img" className="imageEvent" />
+        <Icon icon="ph:heart-fill" color="#E63946" width="15" height="15" />
+      </div>
       <h1 className="titleevent">{obj.title_fr}</h1>
       <ol className="eventdatelist">
-        <li>{obj.date1}</li>
+        <li>{new Date(obj.date1).toLocaleDateString()}</li>
       </ol>
-      <Icon icon="ph:heart-fill" color="#E63946" width="15" height="15" />
       <h2 className="conditions">{obj.conditions_fr}</h2>
     </div>
   );
