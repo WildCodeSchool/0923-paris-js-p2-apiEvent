@@ -1,54 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Karla:wght@200;300;400;500;600;700;800&display=swap");
 
 @media (min-width: 425px) {
-
-    .titlebooking{
-        color: #003049;
-        margin-left: 1rem;
-    }
-    .prix {
-        margin-left: 1rem;
-    }
-    .datetop {
-        display:flex;
-        color: #003049;
-        justify-content: space-around;
-        background-color: #669BBC;
-    }
-    .dateall{
-        display: flex;
-        color: #003049;
-        justify-content: space-around;
-        border: none;
-        
-    }
-    .counter-adult{
-        display: flex;
-        justify-content: space-around;
-        color: #003049;
-        align-items: center;
-    }
-    .counteradultticket {
-        margin: 1rem;
-    }
-    .adultticketasc, .adultticketdesc {
-        border-radius: 50%;
-        border: none;
-        background-color: #669BBC;
-        color:white;
-    }
-    .datebutton{
-        color: white;
-        border: none;
-        background-color: #669BBC;
-    
-    }
-    .bookend {
-        color: white;
-        background-color: red;
-        height: 3rem;
-        width: 100%;
-    }
-    
-    
-    }
+  .titlebooking {
+    color: #003049;
+    margin-left: 1rem;
+  }
+  .prix {
+    margin-left: 1rem;
+  }
+  .datetop {
+    display: flex;
+    color: #003049;
+    justify-content: space-around;
+    background-color: #669bbc;
+  }
+  .dateall {
+    display: flex;
+    color: #003049;
+    justify-content: space-around;
+    border: none;
+  }
+  .counter-adult {
+    display: flex;
+    justify-content: space-around;
+    color: #003049;
+    align-items: center;
+  }
+  .counteradultticket {
+    margin: 1rem;
+  }
+  .adultticketasc,
+  .adultticketdesc {
+    border-radius: 50%;
+    border: none;
+    background-color: #669bbc;
+    color: white;
+  }
+  .datebutton {
+    color: white;
+    border: none;
+    background-color: #669bbc;
+  }
+  .bookend {
+    color: white;
+    background-color: red;
+    height: 3rem;
+    width: 100%;
+  }
+}
