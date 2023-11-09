@@ -20,7 +20,8 @@ function SearchInterface() {
         </h2>
         <div className="zone-list">
           {dataEvents.map((data) => {
-            return <div key={data.uid}>{dataEvents}</div>;
+            console.info(data);
+            return <div key={data.uid}>{dataEvents.title_fr}</div>;
           })}
         </div>
       </div>

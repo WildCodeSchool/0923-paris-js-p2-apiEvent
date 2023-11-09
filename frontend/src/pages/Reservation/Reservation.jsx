@@ -1,8 +1,10 @@
 import { Icon } from "@iconify/react";
 import "./Reservation.css";
 import { useState } from "react";
+import useAllEventsContext from "../../contexts/AllEvents";
 
-function Reservation({ data }) {
+function Reservation() {
+  const { dataEvents } = useAllEventsContext();
   const [counter, setCounter] = useState(0);
   const increase = () => {
     setCounter((count) => count + 1);
@@ -22,14 +24,14 @@ function Reservation({ data }) {
   return (
     <>
       <h1 className="titlebooking">Check available places</h1>
-      <p className="prix">{data.conditions_fr}</p>
+      <p className="prix">{dataEvents.conditions_fr}</p>
       <article className="datetop">
         <Icon icon="uiw:date" color="#003049" width="20" />
         <button type="button">
-          {new Date(data.date1).toLocaleDateString()}
+          {new Date(dataEvents.date1).toLocaleDateString()}
         </button>
         <button type="button">
-          {new Date(data.date2).toLocaleDateString()}
+          {new Date(dataEvents.date2).toLocaleDateString()}
         </button>
       </article>
       <div className="counter-adult">
