@@ -18,7 +18,7 @@ export default function Home() {
       </header>
       <div className="cards-display">
         {filteredData.map((obj) => {
-          return <Card filteredData={obj} />;
+          return <Card obj={obj} />;
         })}
       </div>
     </>

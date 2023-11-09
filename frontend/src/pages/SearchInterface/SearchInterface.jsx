@@ -21,7 +21,8 @@ function SearchInterface() {
         </h2>
         <div className="zone-list">
           {dataEvents.map((obj) => {
-            return <Card dataEvents={obj} />;
+            console.info(obj);
+            return <Card obj={obj} />;
           })}
         </div>
       </div>
