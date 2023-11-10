@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import useAllEventsContext from "../../contexts/AllEvents";
-// import Card from "../../components/Card/Card";
 import SearchDate from "../../components/SearchDate/SearchDate";
 import SearchZone from "../../components/SearchZone/SearchZone";
+import SearchKeyword from "../../components/SearchKeyword/SearchKeyword";
 
 function SearchInterface() {
   const { dataEvents, setFilteredData } = useAllEventsContext();
@@ -45,7 +45,7 @@ function SearchInterface() {
           />{" "}
           Select Zone
         </h2>
-        <SearchZone />
+        <SearchZone filters={filters} setFilters={setFilters} />
         {/* <div className="zone-list">
           {dataEvents.map((obj) => {
             return (
@@ -81,6 +81,7 @@ function SearchInterface() {
           <Icon icon="mi:filter" color="#003049" width="50" height="50" />{" "}
           Select Activity
         </h2>
+        <SearchKeyword filters={filters} setFilters={setFilters} />
         {/* <div className="activity-list">
           {dataEvents.map((obj) => {
             return (
