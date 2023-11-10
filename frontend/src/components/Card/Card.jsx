@@ -4,7 +4,6 @@ import { Icon } from "@iconify/react";
 
 function Card({ obj }) {
   //   const { filteredData } = useAllEventsContext();
-  console.info(obj);
   return (
     <div className="singleEvent">
       <img src={obj.image} alt="img" />
