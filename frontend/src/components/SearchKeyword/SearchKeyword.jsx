@@ -1,58 +1,60 @@
+import { useState } from "react";
 import "./SearchKeyword.css";
 
 function SearchKeyword({ filters, setFilters }) {
-  // const handleFilterBtnClick = (clickedValue) => {
-  //   setFilters({
-  //     ...filters,
-  //     activity: clickedValue,
-  //   });
-  // };
+  const [visible, setVisible] = useState(4);
+
+  const sampleSearchCriteria = [
+    {
+      displayName: "Concert",
+      searchFilterName: "concert",
+    },
+    {
+      displayName: "Dance",
+      searchFilterName: "danse",
+    },
+    {
+      displayName: "Exposition",
+      searchFilterName: "exposition",
+    },
+    {
+      displayName: "Sport",
+      searchFilterName: "sport",
+    },
+    {
+      displayName: "Nature",
+      searchFilterName: "nature",
+    },
+    {
+      displayName: "Family",
+      searchFilterName: "famille",
+    },
+  ];
+
+  const showMoreFilters = () => {
+    setVisible((prevVisible) => (prevVisible === 4 ? prevVisible + 2 : 4));
+  };
+
   return (
-    <div className="activity-list">
-      <button
-        type="button"
-        className="card-activity-filter"
-        onClick={() => setFilters({ ...filters, activity: "concert" })}
-      >
-        Concert
-      </button>
-      <button
-        type="button"
-        className="card-activity-filter"
-        onClick={() => setFilters({ ...filters, activity: "danse" })}
-      >
-        Dance
-      </button>
-      <button
-        type="button"
-        className="card-activity-filter"
-        onClick={() => setFilters({ ...filters, activity: "exposition" })}
-      >
-        Exposition
-      </button>
-      <button
-        type="button"
-        className="card-activity-filter"
-        onClick={() => setFilters({ ...filters, activity: "sport" })}
-        // onClick={handleFilterBtnClick("sport")}
-      >
-        Sport
-      </button>
-      <button
-        type="button"
-        className="card-activity-filter"
-        onClick={() => setFilters({ ...filters, activity: "nature" })}
-        // onClick={handleFilterBtnClick("nature")}
-      >
-        Nature
-      </button>
-      <button
-        type="button"
-        className="card-activity-filter"
-        onClick={() => setFilters({ ...filters, activity: "famille" })}
-        // onClick={handleFilterBtnClick("famille")}
-      >
-        Family
+    <div className="filter-btn-container">
+      {sampleSearchCriteria.slice(0, visible).map((activity) => {
+        return (
+          <div className="activity-list">
+            <button
+              key={activity.searchFilterName}
+              type="button"
+              className="card-activity-filter-btn"
+              onClick={() =>
+                setFilters({ ...filters, activity: activity.searchFilterName })
+              }
+            >
+              {activity.displayName}
+            </button>
+          </div>
+        );
+      })}
+      <button type="button" className="showMoreBtn" onClick={showMoreFilters}>
+        {visible === 4 ? "Show more" : "Show less"}
       </button>
     </div>
   );
