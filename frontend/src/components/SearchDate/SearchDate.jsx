@@ -1,5 +1,6 @@
 import useAllEventsContext from "../../contexts/AllEvents";
 import "./SearchDate.css";
+import Calendar from "../Calendar/Calendar";
 
 function SearchDate({ filters, setFilters }) {
   const { dataEvents, setFilteredData } = useAllEventsContext();
@@ -20,15 +21,15 @@ function SearchDate({ filters, setFilters }) {
   const nextMonday = new Date(currentDate);
   nextMonday.setDate(currentDate.getDate() + daysUntilNextMonday);
 
-  const numberOfDays = 30;
-  const datesAfterNextSunday = Array.from(
-    { length: numberOfDays },
-    (_, index) => {
-      const nextDate = new Date(nextMonday);
-      nextDate.setDate(nextMonday.getDate() + index);
-      return nextDate;
-    }
-  );
+  // const numberOfDays = 30;
+  // const datesAfterNextSunday = Array.from(
+  //   { length: numberOfDays },
+  //   (_, index) => {
+  //     const nextDate = new Date(nextMonday);
+  //     nextDate.setDate(nextMonday.getDate() + index);
+  //     return nextDate;
+  //   }
+  // );
 
   function isToday(date) {
     return (
@@ -103,7 +104,8 @@ function SearchDate({ filters, setFilters }) {
 
   return (
     <div className="date-list">
-      <button
+      <Calendar filters={filters} setFilters={setFilters} />
+      {/* <button
         type="button"
         className="today-filter-btn"
         onClick={() => setFilters({ ...filters, date: currentDate })}
@@ -147,7 +149,7 @@ function SearchDate({ filters, setFilters }) {
         // onClick={() => renderDateSearch(groupedEvents.later)}
       >
         Later
-      </button>
+      </button> */}
     </div>
   );
 }

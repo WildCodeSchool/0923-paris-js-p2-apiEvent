@@ -16,6 +16,7 @@ export function AllEventsProvider({ children }) {
         setFilteredData(data.results);
       });
   }, []);
+
   const value = useMemo(() => {
     const filterData = (searchQuery) => {
       const filtered = dataEvents.filter((data) => {

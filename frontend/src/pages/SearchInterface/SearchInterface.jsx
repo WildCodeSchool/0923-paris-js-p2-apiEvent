@@ -7,30 +7,45 @@ import SearchZone from "../../components/SearchZone/SearchZone";
 import SearchKeyword from "../../components/SearchKeyword/SearchKeyword";
 
 function SearchInterface() {
-  const { dataEvents, setFilteredData } = useAllEventsContext();
+  const [error, setError] = useState(null);
+  const { setFilteredData } = useAllEventsContext();
   const [filters, setFilters] = useState({
     date: null,
     zone: null,
     activity: null,
   });
+  console.info(filters);
 
   function applyFilters() {
-    const urlParams = {
-      code: `&refine=location_postalcode%3A%22${filters.zone}%22`,
-      activity: `&refine=keywords_fr%3A%22${filters.activity}%22`,
-      date: `&refine=firstdate_begin%3A%22${filters.date.getFullYear()}%22`,
-    };
     let url =
       "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/evenements-publics-openagenda/records?limit=20";
-    if (filters.date) {
-      url += urlParams.date;
+    // public.opendatasoft.com/api/explore/v2.1/catalog/datasets/evenements-publics-openagenda/records?limit=20&refine=firstdate_begin%3A%22${filters.date}%22&refine=keywords_fr%3A%22${filters.activity}%22&refine=location_postalcode%3A%22${filters.zone}%22
+    if (filters.activity) {
+      url += `&refine=keywords_fr%3A%22${filters.activity}%22`;
     }
+    if (filters.date) {
+      url += `&refine=firstdate_begin%3A%22${filters.date}%22`;
+    }
+    if (filters.code) {
+      url += `&refine=location_postalcode%3A%22${filters.zone}%22`;
+    }
+    console.info("URL", url);
     // filters dataEvents here using filters state
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setFilteredData(data.results));
+      .then((data) => {
+        if (data.results.length > 0) {
+          setFilteredData(data.results);
+          setError(null);
+        } else {
+          setFilteredData([]);
+          setError(
+            "Oops! Looks like there are no events matching your search criteria.Try again"
+          );
+        }
+      });
   }
-  console.info(dataEvents);
+
   return (
     <>
       <SearchBar />
@@ -46,17 +61,6 @@ function SearchInterface() {
           Select Zone
         </h2>
         <SearchZone filters={filters} setFilters={setFilters} />
-        {/* <div className="zone-list">
-          {dataEvents.map((obj) => {
-            return (
-              <div key={obj.uid}>
-                <div className="card-zone-filter">
-                  {obj.location_postalcode}
-                </div>
-              </div>
-            );
-          })}
-        </div> */}
       </div>
       <div className="DateFilter">
         <h2>
@@ -65,15 +69,6 @@ function SearchInterface() {
           Date
         </h2>
         <SearchDate filters={filters} setFilters={setFilters} />
-        {/* <div className="date-list">
-          {dataEvents.map((obj) => {
-            return (
-              <div key={obj.uid}>
-                <div className="card-date-filter">{obj.date1}</div>
-              </div>
-            );
-          })}
-        </div> */}
       </div>
       <div className="ActivityFilter">
         <h2>
@@ -82,19 +77,13 @@ function SearchInterface() {
           Select Activity
         </h2>
         <SearchKeyword filters={filters} setFilters={setFilters} />
-        {/* <div className="activity-list">
-          {dataEvents.map((obj) => {
-            return (
-              <div key={obj.uid}>
-                <div className="card-activity-filter">{obj.keywords_fr}</div>
-              </div>
-            );
-          })}
-        </div> */}
       </div>
       <button type="button" className="ApplyFilterBtn" onClick={applyFilters}>
         APPLY FILTER
       </button>
+      <div className="error-display">
+        {error && <p className="ErrorMessage">{error}</p>}
+      </div>
     </>
   );
 }
