@@ -32,7 +32,7 @@ function SearchZone({ filters, setFilters }) {
         <button
           type="button"
           className="card-zone-filter-btn"
-          onClick={() => setFilters({ ...filters, zone: "75000" })}
+          onClick={() => setFilters({ ...filters, zone: "Paris" })}
         >
           Paris
         </button>
