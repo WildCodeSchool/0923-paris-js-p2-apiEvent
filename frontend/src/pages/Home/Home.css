@@ -10,6 +10,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  padding-bottom: 55px;
   /* font-family: 'Inter', sans-serif; */
   font-family: "Karla", sans-serif;
 }
@@ -70,4 +71,25 @@ header h2 {
   padding: 24px;
   font-size: 30px;
   color: var(--grey);
+}
+
+.ApplyFilterBtn {
+  width: 100%;
+  background-color: var(--red);
+  border: none;
+  color: var(--white);
+  padding: 3%;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  padding-left: 2em;
+}
+
+.zoneFilter {
+  padding-top: 1em;
 }

@@ -3,12 +3,21 @@ import "./SearchBar.css";
 import { Icon } from "@iconify/react";
 import useAllEventsContext from "../../contexts/AllEvents";
 
+// function SearchBar({ search, setSearch }) {
 function SearchBar() {
   const { filterData } = useAllEventsContext();
   const [search, setSearch] = useState("");
 
   const handleSearch = () => {
     filterData(search);
+    // setSearch(search);
+  };
+
+  const handleEnterKey = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+      e.preventDefault();
+    }
   };
 
   return (
@@ -18,6 +27,7 @@ function SearchBar() {
           type="text"
           placeholder="Musée, théâtre..."
           onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={handleEnterKey}
           value={search}
         />
         <Icon

@@ -18,6 +18,23 @@ body {
   background-color: var(--grey);
 }
 
+.zone-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+  justify-content: space-around;
+  margin: 15px;
+}
+
+.card-zone-filter-btn {
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 10%;
+  color: var(--grey);
+  font-size: 25px;
+  padding: 10px;
+}
+
 .showMoreBtn {
   background-color: var(--primary-color);
   font-size: 25px;
@@ -26,6 +43,6 @@ body {
   border-radius: 10%;
   margin: auto;
   width: 60%;
-  grid-column-start: 1;
-  grid-column-end: 2;
+  /* grid-column-start: 1;
+  grid-column-end: 2; */
 }
