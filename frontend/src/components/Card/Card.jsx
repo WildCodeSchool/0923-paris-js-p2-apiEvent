@@ -15,7 +15,7 @@ function Card({ obj }) {
             color="#E63946"
             width="15"
             height="15"
-            className="icon-cardList"
+            id="icon-cardList"
           />
         </div>
         <div className="container-bot">
@@ -27,6 +27,7 @@ function Card({ obj }) {
                 month: "short",
               })}
             </li>
+            <li className="year">{new Date(obj.date1).getFullYear()}</li>
           </ol>
           <h1 className="titleevent">{obj.title_fr}</h1>
         </div>
