@@ -72,3 +72,24 @@ header h2 {
   font-size: 30px;
   color: var(--grey);
 }
+
+.ApplyFilterBtn {
+  width: 100%;
+  background-color: var(--red);
+  border: none;
+  color: var(--white);
+  padding: 3%;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  padding-left: 2em;
+}
+
+.zoneFilter {
+  padding-top: 1em;
+}

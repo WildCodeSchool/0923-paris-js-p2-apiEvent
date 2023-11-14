@@ -5,14 +5,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@iconify/react": "^4.1.1",
+    "@mui/material": "^5.14.17",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.5",
+    "@mui/x-date-pickers": "^6.18.1",
+    "dayjs": "^1.11.10",
     "leaflet": "^1.9.4",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-bingmaps": "^3.6.1",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.1",
-    "react-router-dom": "^6.18.0"
+    "react-router-dom": "^6.18.0",
+    "styled-components": "^6.1.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.3",

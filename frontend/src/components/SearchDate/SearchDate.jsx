@@ -1,5 +1,6 @@
 import useAllEventsContext from "../../contexts/AllEvents";
 import "./SearchDate.css";
+import Calendar from "../Calendar/Calendar";
 
 function SearchDate({ filters, setFilters }) {
   const { dataEvents, setFilteredData } = useAllEventsContext();
@@ -19,18 +20,17 @@ function SearchDate({ filters, setFilters }) {
   const daysUntilNextMonday = 7 - currentDate.getDay() + 1;
   const nextMonday = new Date(currentDate);
   nextMonday.setDate(currentDate.getDate() + daysUntilNextMonday);
-  console.info("next Monday", nextMonday);
 
-  const numberOfDays = 30;
-  const datesAfterNextSunday = Array.from(
-    { length: numberOfDays },
-    (_, index) => {
-      const nextDate = new Date(nextMonday);
-      nextDate.setDate(nextMonday.getDate() + index);
-      return nextDate;
-    }
-  );
-  console.info(datesAfterNextSunday);
+  // const numberOfDays = 30;
+  // const datesAfterNextSunday = Array.from(
+  //   { length: numberOfDays },
+  //   (_, index) => {
+  //     const nextDate = new Date(nextMonday);
+  //     nextDate.setDate(nextMonday.getDate() + index);
+  //     return nextDate;
+  //   }
+  // );
+
   function isToday(date) {
     return (
       date.getFullYear() === currentDate.getFullYear() &&
@@ -104,16 +104,17 @@ function SearchDate({ filters, setFilters }) {
 
   return (
     <div className="date-list">
-      <button
+      <Calendar filters={filters} setFilters={setFilters} />
+      {/* <button
         type="button"
-        className="today-btn-filter"
+        className="today-filter-btn"
         onClick={() => setFilters({ ...filters, date: currentDate })}
       >
         Today
       </button>
       <button
         type="button"
-        className="tomorow-btn-filter"
+        className="tomorow-filter-btn"
         onClick={() =>
           setFilters({
             ...filters,
@@ -125,7 +126,7 @@ function SearchDate({ filters, setFilters }) {
       </button>
       <button
         type="button"
-        className="we-btn-filter"
+        className="we-filter-btn"
         onClick={() =>
           setFilters({
             ...filters,
@@ -138,7 +139,7 @@ function SearchDate({ filters, setFilters }) {
       </button>
       <button
         type="button"
-        className="later-btn-filter"
+        className="later-filter-btn"
         onClick={() =>
           setFilters({
             ...filters,
@@ -148,7 +149,7 @@ function SearchDate({ filters, setFilters }) {
         // onClick={() => renderDateSearch(groupedEvents.later)}
       >
         Later
-      </button>
+      </button> */}
     </div>
   );
 }
