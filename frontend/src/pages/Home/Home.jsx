@@ -5,6 +5,7 @@ import Card from "../../components/Card/Card";
 
 export default function Home() {
   const { filterData, filteredData } = useAllEventsContext();
+  console.info(filteredData);
   return (
     <>
       <header>
