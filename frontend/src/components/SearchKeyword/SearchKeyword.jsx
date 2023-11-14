@@ -37,9 +37,9 @@ function SearchKeyword({ filters, setFilters }) {
 
   return (
     <div className="filter-btn-container">
-      {sampleSearchCriteria.slice(0, visible).map((activity) => {
-        return (
-          <div className="activity-list">
+      <div className="activity-list">
+        {sampleSearchCriteria.slice(0, visible).map((activity) => {
+          return (
             <button
               key={activity.searchFilterName}
               type="button"
@@ -50,9 +50,9 @@ function SearchKeyword({ filters, setFilters }) {
             >
               {activity.displayName}
             </button>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
       <button type="button" className="showMoreBtn" onClick={showMoreFilters}>
         {visible === 4 ? "Show more" : "Show less"}
       </button>

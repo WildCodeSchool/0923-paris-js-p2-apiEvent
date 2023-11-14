@@ -38,9 +38,11 @@ function SearchZone({ filters, setFilters }) {
         </button>
         {filterZoneBtnArray}
       </div>
+      {/* <div className="showMoreBtn-container"> */}
       <button type="button" className="showMoreBtn" onClick={showMoreFilters}>
-        {visible < 21 ? "Show more" : "Show less"}
+        {visible < 20 ? "Show more" : "Show less"}
       </button>
+      {/* </div> */}
     </div>
   );
 }

@@ -19,6 +19,10 @@ const style = {
   p: 4,
 };
 
+const noBorderBtn = {
+  padding: "0px",
+};
+
 export default function ModalForSearchInterface() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -26,7 +30,7 @@ export default function ModalForSearchInterface() {
 
   return (
     <div className="modalSearchInterface">
-      <Button onClick={handleOpen}>
+      <Button onClick={handleOpen} style={noBorderBtn}>
         <Icon icon="charm:search" color="#E9ECEF" width="40" />
       </Button>
       <Modal

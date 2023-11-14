@@ -53,10 +53,14 @@ function SearchInterface() {
       });
   }
 
+  const styleDateIcon = {
+    padding: "8px",
+  };
+
   return (
     <>
       {/* <SearchBar /> */}
-      <div className="ZoneFilter">
+      <div className="zoneFilter">
         <h2>
           {" "}
           <Icon
@@ -69,15 +73,21 @@ function SearchInterface() {
         </h2>
         <SearchZone filters={filters} setFilters={setFilters} />
       </div>
-      <div className="DateFilter">
+      <div className="dateFilter">
         <h2>
           {" "}
-          <Icon icon="uiw:date" color="#003049" width="40" height="40" /> Select
-          Date
+          <Icon
+            icon="uiw:date"
+            color="#003049"
+            width="40"
+            height="40"
+            style={styleDateIcon}
+          />{" "}
+          Select Date
         </h2>
         <SearchDate filters={filters} setFilters={setFilters} />
       </div>
-      <div className="ActivityFilter">
+      <div className="activityFilter">
         <h2>
           {" "}
           <Icon icon="mi:filter" color="#003049" width="50" height="50" />{" "}
