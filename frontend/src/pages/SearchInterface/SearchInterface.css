@@ -26,6 +26,6 @@ body {
   border-radius: 10%;
   margin: auto;
   width: 60%;
-  grid-column-start: 1;
-  grid-column-end: 2;
+  /* grid-column-start: 1;
+  grid-column-end: 2; */
 }
