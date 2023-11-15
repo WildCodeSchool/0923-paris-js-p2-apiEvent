@@ -1,41 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Karla:wght@200;300;400;500;600;700;800&display=swap");
 @media (min-width: 425px) {
-  .container-fav {
+  .singleEvent-fav {
     border-radius: 1rem;
-    overflow: hidden;
-    width: 45%;
-    float: left;
-    margin: 2.5%;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow-y: scroll;
+    width: 90%;
     box-sizing: border-box;
-    max-height: 13rem;
     background-color: white;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin: 3%;
   }
-  .image-fav img {
+  img.imageEvent-fav {
     display: inline-block;
     border: 0.1rem;
     border-radius: 5rem;
-    width: 50px;
-    height: 5rem;
+    width: 80%;
+    height: 6rem;
     border-radius: 20% 10% / 0% 0%;
   }
-  .title-fav {
+  .titleevent-fav {
     font-size: small;
+    align-items: center;
     max-height: 3rem;
+    width: fit-content;
     margin-right: 1rem;
     overflow-y: scroll;
   }
   .container-top-fav {
     position: relative;
-    background-color: white;
+    width: 80%;
+    order: 2;
   }
   .container-top-fav img {
     display: block;
+    width: 10rem;
   }
   .eventdatelist-fav {
     list-style-type: none;
     margin-left: -1rem;
+    position: absolute;
+    left: 7.5rem;
+    z-index: 1;
+    border-radius: 5rem;
+    background-color: white;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
   .eventdatelist-fav li {
     font-family: "Karla", sans-serif;
@@ -45,9 +54,21 @@
     text-align: center;
   }
   .container-bot-fav {
-    height: 5rem;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    order: 1;
+  }
+  #icon-cardList {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 1;
+  }
+  .fav-title {
+    justify-content: center;
+    color: #1d3557;
+    font-family: "Karla", sans-serif;
+    margin-right: 2rem;
   }
 }
 
