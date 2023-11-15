@@ -6,7 +6,11 @@ import ModalForSearchInterface from "../ModalForSearchInterface/ModalForSearchIn
 
 function NavBar() {
   const Navigate = useNavigate();
-  const { dataEvents } = useAllEventsContext();
+  const { dataEvents, filterFavorites } = useAllEventsContext();
+  const handleFavoritesClick = () => {
+    filterFavorites();
+    Navigate("/MyFavorites"); // Assurez-vous que cette route existe
+  };
 
   const randomEvent = () => {
     return dataEvents[Math.floor(Math.random() * dataEvents.length)].uid;
@@ -18,9 +22,14 @@ function NavBar() {
         icon="octicon:home-16"
         color="#E9ECEF"
         width="40"
-        onClick={() => Navigate(`/`)}
+        onClick={() => Navigate("/")}
       />
-      <Icon icon="ph:heart-bold" color="#E9ECEF" width="40" />
+      <Icon
+        icon="ph:heart-bold"
+        color="#E9ECEF"
+        width="40"
+        onClick={handleFavoritesClick}
+      />
       {/* <Icon icon="lucide:calendar-days" color="#E9ECEF" width="40" /> */}
       <Icon
         icon="ph:seal-question-fill"

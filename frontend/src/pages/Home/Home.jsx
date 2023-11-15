@@ -34,6 +34,7 @@ export default function Home() {
           />
         </div>
       </header>
+      <h2 id="title-top">UPCOMING EVENTURES !</h2>
       <div className="cards-display">
         {filteredData.map((obj) => {
           return <Card obj={obj} />;

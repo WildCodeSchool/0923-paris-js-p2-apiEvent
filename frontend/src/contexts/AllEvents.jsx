@@ -5,6 +5,7 @@ const allEventsContext = createContext();
 export function AllEventsProvider({ children }) {
   const [dataEvents, setDataEvents] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+  const [favorites, setFavorites] = useState([]);
   const currentDate = new Date();
 
   useEffect(() => {
@@ -19,6 +20,22 @@ export function AllEventsProvider({ children }) {
         setFilteredData(data.results);
       });
   }, []);
+
+  const toggleFavorite = (eventId) => {
+    setFavorites((prevFavorites) => {
+      if (prevFavorites.includes(eventId)) {
+        return prevFavorites.filter((id) => id !== eventId);
+      }
+      return [...prevFavorites, eventId];
+    });
+  };
+
+  const filterFavorites = () => {
+    const filtered = dataEvents.filter((event) =>
+      favorites.includes(event.uid)
+    );
+    setFilteredData(filtered);
+  };
 
   const value = useMemo(() => {
     const filterData = (searchQuery) => {
@@ -70,8 +87,11 @@ export function AllEventsProvider({ children }) {
       filteredData,
       setFilteredData,
       filterData,
+      toggleFavorite,
+      filterFavorites,
+      favorites,
     };
-  }, [dataEvents, filteredData]);
+  }, [dataEvents, filteredData, favorites]);
 
   return (
     <allEventsContext.Provider value={value}>

@@ -150,3 +150,21 @@ body {
 /* .onChange {
     display: block;
   } */
+#title-top {
+  font-family: "Karla", sans-serif;
+  color: #1d3557;
+  font-size: xx-large;
+  font-weight: 770;
+}
+@media (min-width: 425px) {
+  #title-top {
+    text-align: left;
+    font-family: "Karla", sans-serif;
+    white-space: nowrap;
+    margin-left: -2.5rem;
+  }
+
+  .cards-display {
+    margin: 0.5rem;
+  }
+}
