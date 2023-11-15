@@ -3,6 +3,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import "./Home.css";
 import useAllEventsContext from "../../contexts/AllEvents";
 import Card from "../../components/Card/Card";
+import Menuburger from "../../components/MenuBurger/MenuBurger";
 
 export default function Home() {
   const { filterData, filteredData, setFilteredData } = useAllEventsContext();
@@ -21,6 +22,7 @@ export default function Home() {
   return (
     <>
       <header>
+        <Menuburger />
         <h1 className="logo">EVENTURES</h1>
         <div className="header-name-container">
           <h2>Discover Events Near You</h2>

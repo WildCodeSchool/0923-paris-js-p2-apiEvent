@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Karla:wght@200;300;400;500;600;700;800&display=swap");
-@media (min-width: 425px) {
+
   :root {
     --white: #fafaff;
     --grey: #e9ecef;
@@ -20,6 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
 
   .searchBar {
@@ -48,6 +49,7 @@
     height: auto;
     align-items: left;
     padding-left: 2.5rem;
+    position: relative;
   }
 
   .searchBar button {
@@ -63,7 +65,7 @@
     justify-content: center;
     flex-direction: column-reverse;
     padding-left: 20%;
-    padding-right: 20%;
+    padding-right: 20%;    
   }
   .header {
     width: 100%;
@@ -71,5 +73,20 @@
   .onChange {
     display: block;
   }
-}
 
+@media screen and (min-width: 425px) {
+  .searchBar input::placeholder {
+    font-size: 15px;
+    padding-left: 1.5rem;
+  }
+.searchBar input {
+  padding: 0px;
+}
+.searchBar {
+  width: 200%;
+  margin: 0 auto;
+}
+.searchBar-container {
+padding-left: 20px;
+}
+}
