@@ -29,7 +29,7 @@ body {
 .card-activity-filter-btn {
   background-color: var(--secondary-color);
   border: none;
-  border-radius: 10%;
+  border-radius: 10px;
   color: var(--grey);
   font-size: 25px;
   padding: 10px;

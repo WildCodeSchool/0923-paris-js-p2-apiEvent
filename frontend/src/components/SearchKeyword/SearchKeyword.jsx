@@ -3,6 +3,7 @@ import "./SearchKeyword.css";
 
 function SearchKeyword({ filters, setFilters }) {
   const [visible, setVisible] = useState(4);
+  const [selectedBtn, setSelectedBtn] = useState(null);
 
   const sampleSearchCriteria = [
     {
@@ -39,14 +40,16 @@ function SearchKeyword({ filters, setFilters }) {
     <div className="filter-btn-container">
       <div className="activity-list">
         {sampleSearchCriteria.slice(0, visible).map((activity) => {
+          const isSelected = selectedBtn === activity.searchFilterName;
           return (
             <button
               key={activity.searchFilterName}
               type="button"
-              className="card-activity-filter-btn"
-              onClick={() =>
-                setFilters({ ...filters, activity: activity.searchFilterName })
-              }
+              className={`card-zone-filter-btn ${isSelected ? "selected" : ""}`}
+              onClick={() => {
+                setFilters({ ...filters, activity: activity.searchFilterName });
+                setSelectedBtn(activity.searchFilterName);
+              }}
             >
               {activity.displayName}
             </button>

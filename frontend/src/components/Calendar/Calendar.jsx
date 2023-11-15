@@ -22,18 +22,17 @@ export default function Calendar({ filters, setFilters }) {
 
   const formattedDateForCalendar = formatDateForCalendar(currentDate);
 
+  const style = {
+    margin: "auto",
+    width: "80%",
+  };
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer
-        components={[
-          "DatePicker",
-          "MobileDatePicker",
-          "DesktopDatePicker",
-          "StaticDatePicker",
-        ]}
-      >
+      <DemoContainer components={["StaticDatePicker"]}>
         <DemoItem label="">
           <DatePicker
+            style={style}
             disablePast
             defaultValue={dayjs(formattedDateForCalendar)}
             value={filters.date ? dayjs(filters.date) : null}

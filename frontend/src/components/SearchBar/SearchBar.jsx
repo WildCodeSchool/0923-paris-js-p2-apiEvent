@@ -25,12 +25,13 @@ function SearchBar() {
       <form className="searchBar">
         <input
           type="text"
-          placeholder="Musée, théâtre..."
+          placeholder="Musée, Paris 13ème..."
           onChange={(e) => setSearch(e.target.value)}
           onKeyDown={handleEnterKey}
           value={search}
         />
         <Icon
+          className="searchBar-Icon"
           icon="charm:search"
           color="#fafaff"
           width="40"
