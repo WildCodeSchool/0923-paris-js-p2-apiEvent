@@ -13,7 +13,7 @@ function Description() {
   const finDevent = dataEvents.find((event) => event.uid === id);
 
   return (
-    <div className="alldescritpion">
+    <div className="alldescription">
       <img src={finDevent.image} alt={finDevent.title_fr} className="pic" />
       <div className="desccond">
         <h3 className="titledescription">{finDevent.title_fr}</h3>

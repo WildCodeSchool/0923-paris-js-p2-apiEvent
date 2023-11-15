@@ -1,10 +1,19 @@
+import React, { useState } from "react";
 import "./Card.css";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
-// import useAllEventsContext from "../../contexts/AllEvents";
+import useAllEventsContext from "../../contexts/AllEvents";
 
 function Card({ obj }) {
-  //   const { filteredData } = useAllEventsContext();
+  const { toggleFavorite, favorites } = useAllEventsContext();
+  const [isLiked, setIsLiked] = useState(favorites.includes(obj.uid));
+  const handleLiked = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsLiked(!isLiked);
+    toggleFavorite(obj.uid);
+  };
+
   return (
     <Link to={`/Description/${obj.uid}`}>
       <div className="singleEvent">
@@ -12,10 +21,11 @@ function Card({ obj }) {
           <img src={obj.image} alt="img" className="imageEvent" />
           <Icon
             icon="ph:heart-fill"
-            color="#E63946"
-            width="15"
-            height="15"
+            color={isLiked ? "#E63946" : "#FFFFFF"}
+            width="30"
+            height="30"
             id="icon-cardList"
+            onClick={handleLiked}
           />
         </div>
         <div className="container-bot">

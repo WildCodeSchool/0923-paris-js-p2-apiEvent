@@ -4,7 +4,7 @@ import QRCodeEvent from "./pages/QRCodeEvent/QRCodeEvent";
 import Reservation from "./pages/Reservation/Reservation";
 import SearchInterface from "./pages/SearchInterface/SearchInterface";
 import UserDashboardMyEvents from "./pages/UserDashboardMyEvents/UserDashboardMyEvents";
-import UserDashboardMyFavorites from "./pages/UserDashboardMyFavorites/UserDashboardMyFavorites";
+import MyFavorites from "./pages/MyFavorites/MyFavorites";
 import Description from "./pages/Description/Description";
 
 function Router() {
@@ -20,10 +20,7 @@ function Router() {
         path="/UserDashboardMyEvents"
         element={<UserDashboardMyEvents />}
       />
-      <Route
-        path="/UserDashboardMyFavorites"
-        element={<UserDashboardMyFavorites />}
-      />
+      <Route path="/MyFavorites" element={<MyFavorites />} />
     </Routes>
   );
 }
