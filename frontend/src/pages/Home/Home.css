@@ -61,7 +61,7 @@ header h2 {
   margin-top: 25px;
   bottom: 0;
   left: 0;
-  position: absolute;
+  position: relative;
 }
 
 .error-display {
@@ -157,23 +157,15 @@ body {
   font-size: xx-large;
   font-weight: 770;
 }
-@media (min-width: 425px) {
-  #title-top {
-    text-align: left;
-    font-family: "Karla", sans-serif;
-    white-space: nowrap;
-    margin-left: -2.5rem;
-  }
-
-  .cards-display {
-    margin: 0.5rem;
-  }
+/* @media (min-width: 425px) { */
+#title-top {
+  text-align: left;
+  font-family: "Karla", sans-serif;
+  white-space: nowrap;
+  margin-left: 1.5rem;
 }
 
-@media screen and (min-width: 425px) {
-h2 {
-  display: initial;
-  text-align: center;
-  padding-left: 0;
+.cards-display {
+  margin: 0.5rem;
 }
-}
+/* } */

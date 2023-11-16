@@ -3,15 +3,18 @@ import Router from "./Router";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import { AllEventsProvider } from "./contexts/AllEvents";
+import { HandleCloseModalProvider } from "./contexts/handleCloseModal";
 
 function App() {
   return (
-    <AllEventsProvider>
-      <BrowserRouter>
-        <Router />
-        <NavBar />
-      </BrowserRouter>
-    </AllEventsProvider>
+    <HandleCloseModalProvider>
+      <AllEventsProvider>
+        <BrowserRouter>
+          <Router />
+          <NavBar />
+        </BrowserRouter>
+      </AllEventsProvider>
+    </HandleCloseModalProvider>
   );
 }
 

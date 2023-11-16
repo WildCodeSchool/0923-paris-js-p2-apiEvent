@@ -11,12 +11,29 @@
   font-family: "Karla", sans-serif;
   text-align: center;
 }
-.boutons {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Karla", sans-serif;
-  text-align: center;
+.Boutons1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  margin: 8px;
+  padding: 8px;
+}
+.Event {
+  padding: 20px;
+  background-color: rgba(102, 155, 188, 0.2);
+  border-radius: 30px;
+  color:#e9ecef;
+  backdrop-filter: blur(4px) saturate(180%);
+  -webkit-backdrop-filter: blur(4px);
+}
+.Multisearch {
+  padding: 20px;
+  background-color: rgba(102, 155, 188, 0.2);
+  border-radius: 30px;
+  color:#e9ecef;
+  backdrop-filter: blur(4px) saturate(180%);
+  -webkit-backdrop-filter: blur(4px);
 }
 @media screen and (max-width: 425px) {
   .boutons {

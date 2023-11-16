@@ -23,9 +23,19 @@ body {
   font-size: 25px;
   color: var(--grey);
   border: none;
-  border-radius: 10%;
+  border-radius: 10px;
   margin: auto;
-  width: 60%;
+  width: 80%;
   /* grid-column-start: 1;
   grid-column-end: 2; */
+}
+
+.modalAnimation {
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in;
+  z-index: 9 !important;
+}
+
+.close {
+  transform: translateY(0%);
 }
