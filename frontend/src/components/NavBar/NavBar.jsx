@@ -3,13 +3,18 @@ import { Icon } from "@iconify/react";
 import "./NavBar.css";
 import useAllEventsContext from "../../contexts/AllEvents";
 import ModalForSearchInterface from "../ModalForSearchInterface/ModalForSearchInterface";
+import useHandleCloseModalContext from "../../contexts/handleCloseModal";
 
 function NavBar() {
   const Navigate = useNavigate();
   const { dataEvents, filterFavorites } = useAllEventsContext();
+  const { open, setOpen } = useHandleCloseModalContext();
+
   const handleFavoritesClick = () => {
     filterFavorites();
-    Navigate("/MyFavorites"); // Assurez-vous que cette route existe
+    setOpen(false);
+    Navigate("/MyFavorites");
+    console.info("open", open);
   };
 
   const randomEvent = () => {
@@ -22,7 +27,10 @@ function NavBar() {
         icon="octicon:home-16"
         color="#E9ECEF"
         width="40"
-        onClick={() => Navigate("/")}
+        onClick={() => {
+          setOpen(false);
+          Navigate("/");
+        }}
       />
       <Icon
         icon="ph:heart-bold"
@@ -35,7 +43,10 @@ function NavBar() {
         icon="ph:seal-question-fill"
         color="#E9ECEF"
         width="40"
-        onClick={() => Navigate(`/Description/${randomEvent}`)}
+        onClick={() => {
+          setOpen(false);
+          Navigate(`/Description/${randomEvent()}`);
+        }}
       />
       {/* <Icon icon="charm:search" color="#E9ECEF" width="40" /> */}
       <ModalForSearchInterface />
