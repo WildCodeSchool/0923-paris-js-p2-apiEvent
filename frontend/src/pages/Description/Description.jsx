@@ -5,6 +5,7 @@ import "./description.css";
 import { Icon } from "@iconify/react";
 import Reservation from "../Reservation/Reservation";
 import useAllEventsContext from "../../contexts/AllEvents";
+import Menuburger from "../../components/MenuBurger/MenuBurger";
 
 function Description() {
   const { dataEvents } = useAllEventsContext();
@@ -44,6 +45,7 @@ function Description() {
         book ticket
       </button>
       {bookingVisible ? <Reservation /> : null}
+      <Menuburger />
     </div>
   );
 }

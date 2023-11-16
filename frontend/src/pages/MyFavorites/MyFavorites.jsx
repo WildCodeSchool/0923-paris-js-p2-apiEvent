@@ -1,6 +1,7 @@
 import React from "react";
 import useAllEventsContext from "../../contexts/AllEvents";
 import "./MyFavorites.css";
+import Menuburger from "../../components/MenuBurger/MenuBurger";
 
 function MyFavorites() {
   const { filteredData } = useAllEventsContext();
@@ -31,6 +32,7 @@ function MyFavorites() {
           </div>
         </div>
       ))}
+      <Menuburger />
     </div>
   );
 }
