@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Karla:wght@200;300;400;500;600;700;800&display=swap");
 @media only screen and (min-width: 768px) {
-  .navBar{
+  .navBar {
     display: none;
   }
 }
@@ -38,4 +38,3 @@ body {
   opacity: 1;
   transition: 0.3s;
 }
-

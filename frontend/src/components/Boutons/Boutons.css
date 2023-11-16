@@ -17,26 +17,32 @@
   align-items: center;
   margin-top: 2%;
   margin: 8px;
-  padding: 8px;
+  padding: 6px;
 }
 .Event {
+  font-size: large;
+  font-weight: 700;
   padding: 20px;
-  background-color: rgba(102, 155, 188, 0.2);
+  background-color: var(--primary-color);
   border-radius: 30px;
-  color:#e9ecef;
-  backdrop-filter: blur(4px) saturate(180%);
-  -webkit-backdrop-filter: blur(4px);
+  color: var(--grey);
+  border: none;
+  /*backdrop-filter: blur(4px) saturate(180%);
+  -webkit-backdrop-filter: blur(4px);*/
 }
 .Multisearch {
+  font-size: large;
+  font-weight: 700;
   padding: 20px;
-  background-color: rgba(102, 155, 188, 0.2);
+  background-color: var(--primary-color);
   border-radius: 30px;
-  color:#e9ecef;
-  backdrop-filter: blur(4px) saturate(180%);
-  -webkit-backdrop-filter: blur(4px);
+  color: var(--grey);
+  border: none;
+  /*  backdrop-filter: blur(4px) saturate(180%);
+  -webkit-backdrop-filter: blur(4px);*/
 }
 @media screen and (max-width: 425px) {
-  .boutons {
+  .Boutons1 {
     display: none;
   }
 }

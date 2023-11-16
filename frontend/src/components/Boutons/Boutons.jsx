@@ -18,7 +18,7 @@ function Boutons() {
           type="button"
           onClick={() => navigate(`/Description/${randomEvent()}`)}
         >
-          Event aléatoire
+          Surprise Me!
         </button>
       </div>
       <div>
