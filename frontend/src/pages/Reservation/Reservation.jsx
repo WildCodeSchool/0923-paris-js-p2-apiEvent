@@ -35,31 +35,37 @@ function Reservation() {
   };
 
   return (
-    <>
+    <div className="bloc-res">
       <h1 className="titlebooking">Check available places</h1>
       <p className="prix">{finDevent.conditions_fr}</p>
-      <article className="datetop">
-        <Icon icon="uiw:date" color="#003049" width="20" />
-        <button type="button">
-          {new Date(finDevent.date1).toLocaleDateString()}
-        </button>
-        <button type="button">
-          {new Date(finDevent.date2).toLocaleDateString()}
-        </button>
-      </article>
-      <div className="counter-adult">
-        <h4>adult ticket</h4>
-        <div className="adultickets">
-          <button className="adultticketdesc" type="button" onClick={decrease}>
-            -
+      <div className="bloc-res2">
+        <article className="datetop">
+          <Icon icon="uiw:date" color="#003049" width="20" />
+          <button type="button">
+            {new Date(finDevent.date1).toLocaleDateString()}
           </button>
-          <span className="counteradultticket">{counter}</span>
-          <button className="adultticketasc" type="button" onClick={increase}>
-            +
+          <button type="button">
+            {new Date(finDevent.date2).toLocaleDateString()}
           </button>
+        </article>
+        <div className="counter-adult">
+          <h4>adult ticket</h4>
+          <div className="adultickets">
+            <button
+              className="adultticketdesc"
+              type="button"
+              onClick={decrease}
+            >
+              -
+            </button>
+            <span className="counteradultticket">{counter}</span>
+            <button className="adultticketasc" type="button" onClick={increase}>
+              +
+            </button>
+          </div>
         </div>
       </div>
-      <div className="counter-adult">
+      <div className="counter-child">
         <h4>child ticket</h4>
         <div className="adultickets">
           <button
@@ -92,7 +98,7 @@ function Reservation() {
         BOOK TICKET
       </button>
       <BasicModal open={openModal} handleClose={handleCloseModal} />
-    </>
+    </div>
   );
 }
 export default Reservation;

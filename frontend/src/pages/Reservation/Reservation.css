@@ -15,20 +15,15 @@
     justify-content: space-around;
     background-color: #669bbc;
   }
-  .dateall {
-    display: flex;
-    color: #003049;
-    justify-content: space-around;
-    border: none;
-  }
-  .counter-adult {
+  .counter-adult,
+  .counter-child {
     display: flex;
     justify-content: space-around;
     color: #003049;
     align-items: center;
   }
   .counteradultticket {
-    margin: 1rem;
+    margin: 0.8rem;
   }
   .adultticketasc,
   .adultticketdesc {
@@ -42,16 +37,7 @@
     border: none;
     background-color: #669bbc;
   }
-  .bookend {
-    color: white;
-    background-color: red;
-    height: 3rem;
-    width: 100%;
-    margin-top: 5rem;
-    font-weight: 800;
-  }
   .hours-list {
-    margin-bottom: 1rem;
     font-family: "Karla", sans-serif;
     color: #003049;
     display: grid;
@@ -73,5 +59,13 @@
     font-family: "Karla", sans-serif;
     color: #003049;
     margin-left: 1rem;
+  }
+  .bookend {
+    color: white;
+    background-color: red;
+    height: 3rem;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: 800;
   }
 }
