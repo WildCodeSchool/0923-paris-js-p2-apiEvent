@@ -1,11 +1,12 @@
+/* eslint jsx-a11y/label-has-associated-control: off */
 import { NavLink } from "react-router-dom";
 import "./MenuBurger.css";
 
 function Menuburger() {
   return (
     <div className="hamburger-menu">
+      <input id="menu__toggle" type="checkbox" />
       <label className="menu__btn" htmlFor="menu__toggle">
-        <input id="menu__toggle" type="checkbox" />
         <span />
       </label>
       <ul className="menu__box">
