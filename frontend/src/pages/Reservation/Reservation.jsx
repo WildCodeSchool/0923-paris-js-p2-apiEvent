@@ -3,6 +3,7 @@ import "./Reservation.css";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useAllEventsContext from "../../contexts/AllEvents";
+import Menuburger from "../../components/MenuBurger/MenuBurger";
 
 function Reservation() {
   const { dataEvents } = useAllEventsContext();
@@ -72,6 +73,7 @@ function Reservation() {
       <button className="bookend" type="button">
         book ticket
       </button>
+      <Menuburger />
     </>
   );
 }

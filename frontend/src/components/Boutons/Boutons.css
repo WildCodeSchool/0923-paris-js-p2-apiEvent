@@ -1,0 +1,25 @@
+:root {
+  --white: #fafaff;
+  --grey: #e9ecef;
+  --dark: #1d3557;
+  --red: #e63946;
+  --primary-color: #003049;
+  --secondary-color: #669bbc;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+  text-align: center;
+}
+.boutons {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+  text-align: center;
+}
+@media screen and (max-width: 425px) {
+  .boutons {
+    display: none;
+  }
+}

@@ -1,24 +1,20 @@
+import { NavLink } from "react-router-dom";
 import "./MenuBurger.css";
 
 function Menuburger() {
   return (
     <div className="hamburger-menu">
       <input id="menu__toggle" type="checkbox" />
-      <label className="menu__btn" for="menu__toggle">
-        <span></span>
+      <label className="menu__btn" htmlFor="menu__toggle">
+        <span />
       </label>
-
-      <ul class="menu__box">
-        <li>
-          <a class="menu__item" href="#">
-            Home
-          </a>
-        </li>
-        <li>
-          <a class="menu__item" href="#">
-            Favoris
-          </a>
-        </li>
+      <ul className="menu__box">
+        <NavLink to="/" className="menu__item">
+          <p>Home</p>
+        </NavLink>
+        <NavLink to="/MyFavorites" className="menu__item">
+          <p>Favoris</p>
+        </NavLink>
       </ul>
     </div>
   );
