@@ -89,7 +89,7 @@ html {
 body {
   height: 100%;
   position: fixed;
-  overflow-y: scroll;
+  overflow-y: scroll !important;
   /* margin-bottom: 200px; */
 }
 /* 
@@ -153,10 +153,8 @@ body {
 #title-top {
   font-family: "Karla", sans-serif;
   color: #1d3557;
-  font-size: x-large;
-  justify-content: center;
-  font-weight: 750;
-  margin-left: 0.5rem;
+  font-size: xx-large;
+  font-weight: 770;
 }
 /* @media (min-width: 425px) { */
 #title-top {
