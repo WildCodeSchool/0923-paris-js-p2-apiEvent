@@ -13,7 +13,7 @@ function Router() {
       <Route path="/" element={<Home />} />
       <Route path="/SearchInterface" element={<SearchInterface />} />
       <Route path="/QRCodeEvent" element={<QRCodeEvent />} />
-      <Route path="/Reservation" element={<Reservation />} />
+      <Route path="/Reservation/:id" element={<Reservation />} />
       <Route path="/Description/:id" element={<Description />} />
 
       <Route

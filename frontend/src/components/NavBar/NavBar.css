@@ -28,7 +28,6 @@ nav {
   height: 60px;
   z-index: 10;
 }
-
 body {
   background-color: var(--grey);
   margin-bottom: 60px;

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./description.css";
 import { Icon } from "@iconify/react";
 import Reservation from "../Reservation/Reservation";
@@ -37,13 +37,15 @@ function Description() {
           <p className="adress">{finDevent.location_address}</p>
         </div>
       </div>
-      <button
-        className="booking"
-        type="button"
-        onClick={() => setBookingVisible(!bookingVisible)}
-      >
-        book ticket
-      </button>
+      <Link to={`/Reservation/${finDevent.uid}`}>
+        <button
+          className="booking"
+          type="button"
+          onClick={() => setBookingVisible(!bookingVisible)}
+        >
+          BOOK TICKET
+        </button>
+      </Link>
       {bookingVisible ? <Reservation /> : null}
       <Menuburger />
     </div>

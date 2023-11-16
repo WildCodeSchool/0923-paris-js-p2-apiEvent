@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Karla:wght@200;300;400;500;600;700;800&display=swap");
 
-@media (min-width: 425px) {
+@media (min-width: 300px) {
   .titlebooking {
     color: #003049;
     margin-left: 1rem;
   }
   .prix {
     margin-left: 1rem;
+    color: #003049;
   }
   .datetop {
     display: flex;
@@ -14,20 +15,15 @@
     justify-content: space-around;
     background-color: #669bbc;
   }
-  .dateall {
-    display: flex;
-    color: #003049;
-    justify-content: space-around;
-    border: none;
-  }
-  .counter-adult {
+  .counter-adult,
+  .counter-child {
     display: flex;
     justify-content: space-around;
     color: #003049;
     align-items: center;
   }
   .counteradultticket {
-    margin: 1rem;
+    margin: 0.8rem;
   }
   .adultticketasc,
   .adultticketdesc {
@@ -41,10 +37,46 @@
     border: none;
     background-color: #669bbc;
   }
-  .bookend {
+  .hours-list {
+    font-family: "Karla", sans-serif;
+    color: #003049;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .hours-list button {
+    width: 80%;
+    height: 80%;
+    font-family: "Karla", sans-serif;
     color: white;
+    background-color: #669bbc;
+    list-style-type: none;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 10px;
+  }
+  .hours-container h3 {
+    font-family: "Karla", sans-serif;
+    color: #003049;
+    margin-left: 1rem;
+  }
+  .bookend {
+    width: 100%;
+    background-color: var(--red);
+    border: none;
+    color: var(--white);
+    padding: 3%;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 25px;
+    bottom: 0;
+    left: 0;
+    position: relative;
+  }
+  /* color: white;
     background-color: red;
     height: 3rem;
     width: 100%;
-  }
+    margin-top: 10px;
+    font-weight: 800;*/
 }

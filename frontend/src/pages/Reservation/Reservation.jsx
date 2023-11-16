@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import "./Reservation.css";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import BasicModal from "../../components/Confirmation/Confirmation";
 import useAllEventsContext from "../../contexts/AllEvents";
 import Menuburger from "../../components/MenuBurger/MenuBurger";
 
@@ -10,6 +11,8 @@ function Reservation() {
   const [counter, setCounter] = useState(0);
   const { id } = useParams();
   const finDevent = dataEvents.find((event) => event.uid === id);
+  const [openModal, setOpenModal] = useState(false);
+
   const increase = () => {
     setCounter((count) => count + 1);
   };
@@ -24,33 +27,46 @@ function Reservation() {
   const decreaseChild = () => {
     setCounterChild((count) => count - 1);
   };
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
 
   return (
-    <>
+    <div className="bloc-res">
       <h1 className="titlebooking">Check available places</h1>
       <p className="prix">{finDevent.conditions_fr}</p>
-      <article className="datetop">
-        <Icon icon="uiw:date" color="#003049" width="20" />
-        <button type="button">
-          {new Date(finDevent.date1).toLocaleDateString()}
-        </button>
-        <button type="button">
-          {new Date(finDevent.date2).toLocaleDateString()}
-        </button>
-      </article>
-      <div className="counter-adult">
-        <h4>adult ticket</h4>
-        <div className="adultickets">
-          <button className="adultticketdesc" type="button" onClick={decrease}>
-            -
+      <div className="bloc-res2">
+        <article className="datetop">
+          <Icon icon="uiw:date" color="#003049" width="20" />
+          <button type="button">
+            {new Date(finDevent.date1).toLocaleDateString()}
           </button>
-          <span className="counteradultticket">{counter}</span>
-          <button className="adultticketasc" type="button" onClick={increase}>
-            +
+          <button type="button">
+            {new Date(finDevent.date2).toLocaleDateString()}
           </button>
+        </article>
+        <div className="counter-adult">
+          <h4>adult ticket</h4>
+          <div className="adultickets">
+            <button
+              className="adultticketdesc"
+              type="button"
+              onClick={decrease}
+            >
+              -
+            </button>
+            <span className="counteradultticket">{counter}</span>
+            <button className="adultticketasc" type="button" onClick={increase}>
+              +
+            </button>
+          </div>
         </div>
       </div>
-      <div className="counter-adult">
+      <div className="counter-child">
         <h4>child ticket</h4>
         <div className="adultickets">
           <button
@@ -70,11 +86,21 @@ function Reservation() {
           </button>
         </div>
       </div>
-      <button className="bookend" type="button">
-        book ticket
+      <div className="hours-container">
+        <h3>Choose the time</h3>
+        <ol className="hours-list">
+          <button type="button">10h00</button>
+          <button type="button">13h00</button>
+          <button type="button">15h00</button>
+          <button type="button">19h00</button>
+        </ol>
+      </div>
+      <button className="bookend" type="button" onClick={handleOpenModal}>
+        BOOK TICKET
       </button>
       <Menuburger />
-    </>
+      <BasicModal open={openModal} handleClose={handleCloseModal} />
+    </div>
   );
 }
 export default Reservation;
