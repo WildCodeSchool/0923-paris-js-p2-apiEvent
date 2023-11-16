@@ -153,11 +153,12 @@ body {
 #title-top {
   font-family: "Karla", sans-serif;
   color: #1d3557;
-  font-size: xx-large;
+  font-size: x-large;
   justify-content: center;
-  font-weight: 770;
+  font-weight: 750;
+  margin-left: 0.5rem;
 }
-@media (min-width: 425px) {
+@media (min-width: 300px) {
   #title-top {
     text-align: left;
     font-family: "Karla", sans-serif;

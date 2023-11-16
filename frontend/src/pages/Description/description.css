@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Karla:wght@200;300;400;500;600;700;800&display=swap");
 
-@media (min-width: 425px) {
+@media (min-width: 300px) {
   .alldescription {
     max-width: 100%;
     max-height: 100%;
@@ -52,12 +52,13 @@
     color: white;
     background-color: red;
     height: 3rem;
-    width: 30rem;
+    width: 100%;
+    font-weight: 800;
   }
   .pic {
     color: bisque;
-    max-width: 30rem;
-    max-height: 30rem;
+    max-width: 100%;
+    max-height: 100%;
   }
   .location {
     display: flex;

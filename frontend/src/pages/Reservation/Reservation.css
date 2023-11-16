@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Karla:wght@200;300;400;500;600;700;800&display=swap");
 
-@media (min-width: 425px) {
+@media (min-width: 300px) {
   .titlebooking {
     color: #003049;
     margin-left: 1rem;
   }
   .prix {
     margin-left: 1rem;
+    color: #003049;
   }
   .datetop {
     display: flex;
@@ -46,5 +47,31 @@
     background-color: red;
     height: 3rem;
     width: 100%;
+    margin-top: 5rem;
+    font-weight: 800;
+  }
+  .hours-list {
+    margin-bottom: 1rem;
+    font-family: "Karla", sans-serif;
+    color: #003049;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .hours-list button {
+    width: 80%;
+    height: 80%;
+    font-family: "Karla", sans-serif;
+    color: white;
+    background-color: #669bbc;
+    list-style-type: none;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 10px;
+  }
+  .hours-container h3 {
+    font-family: "Karla", sans-serif;
+    color: #003049;
+    margin-left: 1rem;
   }
 }

@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import "./Reservation.css";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import BasicModal from "../../components/Confirmation/Confirmation";
 import useAllEventsContext from "../../contexts/AllEvents";
 
 function Reservation() {
@@ -9,6 +10,8 @@ function Reservation() {
   const [counter, setCounter] = useState(0);
   const { id } = useParams();
   const finDevent = dataEvents.find((event) => event.uid === id);
+  const [openModal, setOpenModal] = useState(false);
+
   const increase = () => {
     setCounter((count) => count + 1);
   };
@@ -22,6 +25,13 @@ function Reservation() {
   };
   const decreaseChild = () => {
     setCounterChild((count) => count - 1);
+  };
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
   };
 
   return (
@@ -69,9 +79,19 @@ function Reservation() {
           </button>
         </div>
       </div>
-      <button className="bookend" type="button">
-        book ticket
+      <div className="hours-container">
+        <h3>Choose the time</h3>
+        <ol className="hours-list">
+          <button type="button">10h00</button>
+          <button type="button">13h00</button>
+          <button type="button">15h00</button>
+          <button type="button">19h00</button>
+        </ol>
+      </div>
+      <button className="bookend" type="button" onClick={handleOpenModal}>
+        BOOK TICKET
       </button>
+      <BasicModal open={openModal} handleClose={handleCloseModal} />
     </>
   );
 }

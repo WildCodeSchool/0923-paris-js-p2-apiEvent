@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Karla:wght@200;300;400;500;600;700;800&display=swap");
-@media (min-width: 425px) {
+@media (min-width: 300px) {
   .singleEvent-fav {
     border-radius: 1rem;
     display: flex;
@@ -14,7 +14,7 @@
     display: inline-block;
     border: 0.1rem;
     border-radius: 5rem;
-    width: 80%;
+    width: 100%;
     height: 6rem;
     border-radius: 20% 10% / 0% 0%;
   }
@@ -22,18 +22,19 @@
     font-size: small;
     align-items: center;
     max-height: 3rem;
-    width: fit-content;
-    margin-right: 1rem;
+    max-width: 80%;
+    margin-left: 1rem;
     overflow-y: scroll;
   }
   .container-top-fav {
     position: relative;
-    width: 80%;
+    width: 100%;
     order: 2;
   }
   .container-top-fav img {
     display: block;
-    width: 10rem;
+    width: 100%;
+    max-width: 12rem;
   }
   .eventdatelist-fav {
     list-style-type: none;
