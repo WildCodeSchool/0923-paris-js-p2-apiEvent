@@ -1,68 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Karla:wght@200;300;400;500;600;700;800&display=swap");
 
-@media (min-width: 425px) {
-  .alldescription {
-    max-width: 100%;
-    max-height: 100%;
-    margin-bottom: 5rem;
-  }
-  .desccond {
-    font-family: "Karla", sans-serif;
-    justify-content: center;
-    align-items: center;
-    margin-right: 0.5rem;
-    margin-left: 1rem;
-  }
-  .hrtop {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
-  .hrbot {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
-  .adress {
-    font-family: "Karla", sans-serif;
-    display: flex;
-    justify-content: left;
-    margin-left: 3rem;
-  }
-  .dateadress {
-    display: block;
-    align-items: left;
-  }
-  .descirptiondatelist {
-    display: flex;
-    justify-content: space-around;
-    list-style-type: none;
-    align-items: center;
-  }
-  .location {
-    display: flex;
-    justify-content: space-around;
-  }
-  .longdescr {
-    margin-right: 2rem;
-    margin-left: 2rem;
-    font-family: "Karla", sans-serif;
-    max-height: 10rem;
-    overflow-y: scroll;
-  }
-  .booking {
-    color: white;
-    background-color: red;
-    height: 3rem;
-    width: 30rem;
-  }
-  .pic {
-    color: bisque;
-    max-width: 30rem;
-    max-height: 30rem;
-  }
-  .location {
-    display: flex;
-    font-family: "Karla", sans-serif;
-    justify-content: center;
-    align-items: center;
-  }
+/* @media (min-width: 425px) { */
+.alldescription {
+  max-width: 100%;
+  max-height: 100%;
+  margin-bottom: 5rem;
 }
+.desccond {
+  font-family: "Karla", sans-serif;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+  margin-left: 1rem;
+}
+.hrtop {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.hrbot {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.adress {
+  font-family: "Karla", sans-serif;
+  display: flex;
+  justify-content: left;
+  margin-left: 3rem;
+}
+.dateadress {
+  display: block;
+  align-items: left;
+}
+.descirptiondatelist {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  align-items: center;
+}
+.location {
+  display: flex;
+  justify-content: space-around;
+}
+.longdescr {
+  margin-right: 2rem;
+  margin-left: 2rem;
+  font-family: "Karla", sans-serif;
+  max-height: 10rem;
+  overflow-y: scroll;
+}
+.booking {
+  color: white;
+  background-color: red;
+  height: 3rem;
+  width: 30rem;
+}
+.pic {
+  color: bisque;
+  max-width: 30rem;
+  max-height: 30rem;
+}
+.location {
+  display: flex;
+  font-family: "Karla", sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+/* } */
