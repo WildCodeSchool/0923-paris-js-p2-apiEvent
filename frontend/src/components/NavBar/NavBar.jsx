@@ -8,13 +8,12 @@ import useHandleCloseModalContext from "../../contexts/handleCloseModal";
 function NavBar() {
   const Navigate = useNavigate();
   const { dataEvents, filterFavorites } = useAllEventsContext();
-  const { open, setOpen } = useHandleCloseModalContext();
+  const { setOpen } = useHandleCloseModalContext();
 
   const handleFavoritesClick = () => {
     filterFavorites();
     setOpen(false);
     Navigate("/MyFavorites");
-    console.info("open", open);
   };
 
   const randomEvent = () => {
