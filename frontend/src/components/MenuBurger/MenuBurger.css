@@ -85,7 +85,7 @@
   background-color: #cfd8dc;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 769px) {
   .hamburger-menu {
     display: none;
   }

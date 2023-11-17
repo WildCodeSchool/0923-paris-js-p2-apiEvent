@@ -4,13 +4,13 @@ import "./MyFavorites.css";
 import Menuburger from "../../components/MenuBurger/MenuBurger";
 
 function MyFavorites() {
-  const { filteredData } = useAllEventsContext();
-
+  const { favoritesList } = useAllEventsContext();
+  console.info(favoritesList);
   return (
     <div>
-      <h2 className="fav-title">Vos Favoris</h2>
+      <h2 className="fav-title">Your favorites</h2>
 
-      {filteredData.map((event) => (
+      {favoritesList.map((event) => (
         <div key={event.uid}>
           <div className="singleEvent-fav">
             <div className="container-top-fav">

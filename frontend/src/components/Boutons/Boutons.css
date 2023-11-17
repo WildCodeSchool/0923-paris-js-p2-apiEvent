@@ -41,7 +41,7 @@
   /*  backdrop-filter: blur(4px) saturate(180%);
   -webkit-backdrop-filter: blur(4px);*/
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .Boutons1 {
     display: none;
   }

@@ -6,6 +6,7 @@ export function AllEventsProvider({ children }) {
   const [dataEvents, setDataEvents] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [favoritesList, setFavoritesList] = useState([]);
   const currentDate = new Date();
 
   useEffect(() => {
@@ -18,6 +19,7 @@ export function AllEventsProvider({ children }) {
       .then((data) => {
         setDataEvents(data.results);
         setFilteredData(data.results);
+        setFavoritesList(data.results);
       });
   }, []);
 
@@ -34,7 +36,7 @@ export function AllEventsProvider({ children }) {
     const filtered = dataEvents.filter((event) =>
       favorites.includes(event.uid)
     );
-    setFilteredData(filtered);
+    setFavoritesList(filtered);
   };
 
   const value = useMemo(() => {
@@ -90,8 +92,9 @@ export function AllEventsProvider({ children }) {
       toggleFavorite,
       filterFavorites,
       favorites,
+      favoritesList,
     };
-  }, [dataEvents, filteredData, favorites]);
+  }, [dataEvents, filteredData, favorites, favoritesList]);
 
   return (
     <allEventsContext.Provider value={value}>
