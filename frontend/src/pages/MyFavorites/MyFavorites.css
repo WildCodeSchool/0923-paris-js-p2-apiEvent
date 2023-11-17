@@ -32,6 +32,14 @@ img.imageEvent-fav {
   width: 100%;
   order: 2;
 }
+
+.container-top-fav a {
+  text-decoration: none !important;
+}
+
+.container-top-fav Link {
+  text-decoration: none !important;
+}
 .container-top-fav img {
   display: block;
   width: 100%;
@@ -66,6 +74,10 @@ img.imageEvent-fav {
   display: flex;
   align-items: center;
   order: 1;
+}
+a:-webkit-any-link {
+  text-decoration: none;
+  color: var(--primary-color);
 }
 #icon-cardList {
   position: absolute;
@@ -122,12 +134,15 @@ img.imageEvent-fav {
     background-color: var(--white);
     padding-right: 2rem;
     padding-left: 1rem;
-    height: 10%;
+    margin-top: 0rem;
+    /* height: 10%; */
     /* padding-top: 0.5em;
     padding-bottom: 0.5em; */
   }
   .eventdatelist-fav li {
     font-size: x-large;
+    list-style-type: none;
+    text-decoration: none;
   }
   .singleEvent-fav {
     border-radius: 1rem;
