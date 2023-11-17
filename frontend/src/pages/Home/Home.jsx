@@ -1,4 +1,3 @@
-import { useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import "./Home.css";
 import useAllEventsContext from "../../contexts/AllEvents";
@@ -8,7 +7,6 @@ import Boutons from "../../components/Boutons/Boutons";
 
 export default function Home() {
   const { filterData, filteredData } = useAllEventsContext();
-  const [search, setSearch] = useState("");
   // const currentDate = new Date();
 
   // useEffect(() => {
@@ -31,11 +29,7 @@ export default function Home() {
             <h2>Discover Events Near You</h2>
           </div>
           <Boutons />
-          <SearchBar
-            search={search}
-            setSearch={setSearch}
-            filterData={filterData}
-          />
+          <SearchBar filterData={filterData} />
         </div>
       </header>
       <h2 id="title-top">UPCOMING EVENTURES !</h2>
